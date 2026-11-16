@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Criativos &amp; Produtos · Brechic Boutique</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Identidade clara, premium — fundo branco, verde sofisticado nos detalhes, Fraunces + Inter. Design comprometido com tema claro. */
+:root{
+  color-scheme:light;
+  --bg:#ffffff; --bg-alt:#f6f8f4; --surface:#ffffff; --ink:#1b2620; --muted:#64706a;
+  --line:#e6eae1; --line-2:#eef1ea; --pine:#1f5b3c; --pine-ink:#184a30; --sage:#8aae96; --sage-soft:#eef4ec;
+  --good:#1f7a4d; --warn:#9a6a16; --warn-bg:#f8efd9; --crit:#a8392a; --crit-bg:#f8e7e2;
+  --shadow:0 1px 2px rgba(27,42,34,.04),0 10px 30px rgba(27,42,34,.05);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);font-weight:560;text-wrap:balance;line-height:1.1;margin:0;color:var(--pine-ink)}
+h2{font-size:clamp(1.55rem,3.4vw,2.2rem);letter-spacing:-.012em;margin-bottom:.1em}
+h3{font-size:1.12rem;font-weight:600;color:var(--ink)}
+p{margin:.5em 0}
+a{color:var(--pine);text-underline-offset:2px}
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--pine)}
+.lede{color:var(--muted);font-size:1.03rem;max-width:64ch}
+.num{font-variant-numeric:tabular-nums}
+.sticky{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.sticky .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:11px}
+.sticky b{font-family:var(--serif);font-weight:600;color:var(--pine-ink)}
+.tag{font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+section{padding-block:40px;border-top:1px solid var(--line)}
+section.alt{background:var(--bg-alt);border-top:1px solid var(--line)}
+.hero{padding-block:54px 34px}
+.hero h1{font-size:clamp(2.6rem,6.8vw,4.6rem);letter-spacing:-.022em;margin:.14em 0 .2em}
+.hero .sub{display:flex;gap:10px 22px;flex-wrap:wrap;color:var(--muted);font-size:.9rem;margin-top:18px}
+.hero .sub b{color:var(--ink)}
+.findings{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(246px,1fr));gap:15px;counter-reset:f}
+.findings li{counter-increment:f;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 50px;position:relative;box-shadow:var(--shadow);font-size:.93rem}
+.findings li::before{content:counter(f);position:absolute;left:16px;top:17px;width:24px;height:24px;border-radius:50%;background:var(--sage-soft);color:var(--pine-ink);font-size:.78rem;font-weight:700;display:grid;place-items:center;font-family:var(--serif);border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.subhead{display:flex;align-items:baseline;gap:10px;margin:26px 0 14px;flex-wrap:wrap}
+.subhead h3{font-family:var(--serif);font-size:1.3rem;color:var(--pine-ink)}
+.subhead .cap{font-size:.8rem;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:11px;min-width:0}
+.card .top{display:flex;justify-content:space-between;gap:8px;align-items:start}
+.card h3{font-size:1.04rem;line-height:1.2}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.c-active{background:var(--sage-soft);color:var(--good)}
+.c-paused{background:var(--warn-bg);color:var(--warn)}
+.c-crit{background:var(--crit-bg);color:var(--crit)}
+.c-new{background:#e7eef8;color:#2b5aa0}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:11px 8px;font-variant-numeric:tabular-nums;border-top:1px solid var(--line-2);padding-top:12px}
+.metrics div{min-width:0}
+.metrics .m{font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.metrics .x{font-size:1.02rem;font-weight:600;font-family:var(--serif);color:var(--ink)}
+.why{font-size:.88rem;color:var(--muted)}
+.why b{color:var(--ink)}
+.cardfoot{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;font-size:.82rem}
+.cardfoot a{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:8px;padding:5px 10px;text-decoration:none;color:var(--pine);background:var(--bg-alt)}
+.cardfoot .lowconf{color:var(--muted);font-size:.76rem;align-self:center}
+.pos{color:var(--good)}.neg{color:var(--crit)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;font-variant-numeric:tabular-nums}
+th,td{padding:11px 13px;text-align:right;border-bottom:1px solid var(--line-2);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:180px}
+thead th{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;background:var(--bg-alt)}
+tbody tr:last-child td{border-bottom:0}
+.cls{font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.02em}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.q{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.q .item{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--sage);border-radius:0 12px 12px 0;padding:14px 16px;box-shadow:var(--shadow)}
+.q .item p{margin:.2em 0;font-size:.9rem}
+.q .item .ask{font-weight:650;color:var(--pine-ink)}
+.brief{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.brief .b{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);min-width:0}
+.brief .b .p{font-size:.68rem;font-weight:700;color:var(--pine);letter-spacing:.06em;text-transform:uppercase}
+.brief .b h3{margin:.3em 0 .1em}
+.muted{color:var(--muted)}
+.flag{background:var(--sage-soft);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:.86rem;margin-top:16px}
+@media (max-width:720px){.cols,.q{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+<div class="sticky"><div class="wrap"><b><span>Brechic Boutique</span> — Criativos & Produtos</b><span class="tag"><span>09/11</span> – <span>15/11/2026</span></span></div></div>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Para o time de conteúdo · Meta Ads + GA4 · Edição semanal</div>
+  <h1>Criativos & Produtos</h1>
+  <p class="lede"><span>Quais peças estão vendendo, por que merecem ser reproduzidas e o que vale gravar. Compras e receita dos anúncios são as atribuídas pela Meta; não são vendas confirmadas da loja.</span></p>
+  <div class="sub">
+    <span>Conta <b><span>BRECHIC BOUTIQUE - Conta de anúncios</span></b></span><span>Janela <b><span>09/11</span>–<span>15/11/2026</span></b> (seg–dom)</span>
+    <span>Fontes <b>Meta Ads · GA4</b></span>
+  </div>
+</header>
+
+<section>
+  <div class="eyebrow">O essencial</div>
+  <h2>Principais descobertas</h2>
+  <p class="lede" style="margin-bottom:22px">Quatro leituras que orientam a produção de conteúdo desta semana.</p>
+  <ol class="findings" style="grid-template-columns:repeat(auto-fit,minmax(max(246px,clamp(calc(25% - 11.25px),calc((1029px - 100%) * 999),calc(50% - 7.5px))),1fr))">
+      <li><b>O catálogo segue como a principal origem de compras atribuídas:</b> <span>75</span> compras e ROAS <span>15,3</span>, sem identificar a peça comprada.</li>
+      <li><b>Dois vídeos de cropped no corpo entraram direto no topo.</b> Cropped Haila e Cropped Belora, sem entrega na semana anterior, somaram <span>16</span> e <span>18</span> compras atribuídas pela Meta.</li>
+      <li><b>Todos os criativos marcados como consistentes melhoraram o ROAS entre as duas semanas.</b> Em dois deles — Blusa Malibu e Blusa Anara — isso veio com menos compras atribuídas que na semana anterior: eficiência melhor, volume menor. Os dados não indicam a causa.</li>
+      <li><b>A vitrine e os anúncios apontam para peças diferentes:</b> a <span>Blusa Crepe Macio Aveline - Decote V Detalhes Dourados e Peplum</span>, com <span>47</span> unidades registradas no Google Analytics, não aparece entre os criativos destacados; dar a ela um criativo próprio é hipótese a testar.</li>
+  </ol>
+</section>
+
+<section class="alt">
+  <div class="eyebrow">O que reproduzir</div>
+  <h2>Melhores criativos dos últimos 7 dias</h2>
+  <p class="lede">Os anúncios que mais venderam na janela, identificados por ID real, com as métricas individuais que explicam por que merecem atenção. ROAS e CPA de combinação campanha×anúncio; eficiência exige amostra, por isso o volume de compras aparece em cada card.</p>
+  <div class="grid" style="margin-top:18px">
+    <div class="card"><div class="top"><h3><span>Catálogo — público novo</span></h3><span class="chip c-active">Ativo</span></div><div class="why">Anúncio de catálogo. <b>Maior volume de compras atribuídas</b>, sem mostrar a peça comprada.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$630</span></div></div><div><div class="m">Compras</div><div class="x"><span>75</span></div></div><div><div class="m">ROAS</div><div class="x pos"><span>15,3</span></div></div><div><div class="m">Receita</div><div class="x"><span>R$9,6k</span></div></div><div><div class="m">CPA</div><div class="x"><span>R$8</span></div></div><div><div class="m">CTR link</div><div class="x"><span>2,73%</span></div></div><div><div class="m">CPC link</div><div class="x"><span>R$0,46</span></div></div></div><div class="cardfoot"><a href="https://fb.me/2Pe1FDkKj4JRRzz" target="_blank" rel="noopener">Prévia do anúncio</a></div></div>
+    <div class="card"><div class="top"><h3><span>Cropped Haila — vídeo no corpo</span></h3><span class="chip c-new">Novo destaque</span></div><div class="why">Vídeo da peça no corpo. <b>Melhor ROAS entre os destaques</b>, com amostra suficiente.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$118</span></div></div><div><div class="m">Compras</div><div class="x"><span>16</span></div></div><div><div class="m">ROAS</div><div class="x pos"><span>17,6</span></div></div><div><div class="m">Receita</div><div class="x"><span>R$2,1k</span></div></div><div><div class="m">CPA</div><div class="x"><span>R$7</span></div></div><div><div class="m">CTR link</div><div class="x"><span>2,96%</span></div></div><div><div class="m">CPC link</div><div class="x"><span>R$0,30</span></div></div></div><div class="cardfoot"><a href="https://www.instagram.com/p/DflVsZmMXfR/" target="_blank" rel="noopener">▶ Post IG</a></div></div>
+    <div class="card"><div class="top"><h3><span>Cropped Belora — vídeo no corpo</span></h3><span class="chip c-new">Novo destaque</span></div><div class="why">Vídeo da peça no corpo. Segundo maior volume de compras atribuídas entre os destaques.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$161</span></div></div><div><div class="m">Compras</div><div class="x"><span>18</span></div></div><div><div class="m">ROAS</div><div class="x pos"><span>12,8</span></div></div><div><div class="m">Receita</div><div class="x"><span>R$2,1k</span></div></div><div><div class="m">CPA</div><div class="x"><span>R$9</span></div></div><div><div class="m">CTR link</div><div class="x"><span>2,83%</span></div></div><div><div class="m">CPC link</div><div class="x"><span>R$0,28</span></div></div></div><div class="cardfoot"><a href="https://www.instagram.com/p/DfpJhMusV9w/" target="_blank" rel="noopener">▶ Post IG</a></div></div>
+    <div class="card"><div class="top"><h3><span>Body Carlotta — foto em ambiente</span></h3><span class="chip c-active">Ativo</span></div><div class="why">Foto da peça em ambiente, no sofá. Volume relevante de compras atribuídas, com o CPA mais alto entre as fotos destacadas.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$253</span></div></div><div><div class="m">Compras</div><div class="x"><span>16</span></div></div><div><div class="m">ROAS</div><div class="x pos"><span>7,7</span></div></div><div><div class="m">Receita</div><div class="x"><span>R$2,0k</span></div></div><div><div class="m">CPA</div><div class="x"><span>R$16</span></div></div><div><div class="m">CTR link</div><div class="x"><span>2,63%</span></div></div><div><div class="m">CPC link</div><div class="x"><span>R$0,22</span></div></div></div><div class="cardfoot"><a href="https://www.instagram.com/p/DexyLGgsYOK/" target="_blank" rel="noopener">▶ Post IG</a></div></div>
+    <div class="card"><div class="top"><h3><span>Body Coline — foto em ambiente</span></h3><span class="chip c-active">Ativo</span></div><div class="why">Foto da peça em ambiente, no sofá. ROAS alto com amostra suficiente.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$140</span></div></div><div><div class="m">Compras</div><div class="x"><span>13</span></div></div><div><div class="m">ROAS</div><div class="x pos"><span>12,0</span></div></div><div><div class="m">Receita</div><div class="x"><span>R$1,7k</span></div></div><div><div class="m">CPA</div><div class="x"><span>R$11</span></div></div><div><div class="m">CTR link</div><div class="x"><span>2,30%</span></div></div><div><div class="m">CPC link</div><div class="x"><span>R$0,32</span></div></div></div><div class="cardfoot"><a href="https://www.instagram.com/p/DcU8IyuMUPi/" target="_blank" rel="noopener">▶ Post IG</a></div></div>
+    <div class="card"><div class="top"><h3><span>Macacão Florise — vídeo vestindo</span></h3><span class="chip c-new">Novo destaque</span></div><div class="why">Vídeo da peça vestida. <b>CPA mais alto entre os destaques</b>, e a campanha deste anúncio está registrada como pausada.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$253</span></div></div><div><div class="m">Compras</div><div class="x"><span>11</span></div></div><div><div class="m">ROAS</div><div class="x pos"><span>6,0</span></div></div><div><div class="m">Receita</div><div class="x"><span>R$1,5k</span></div></div><div><div class="m">CPA</div><div class="x"><span>R$23</span></div></div><div><div class="m">CTR link</div><div class="x"><span>3,02%</span></div></div><div><div class="m">CPC link</div><div class="x"><span>R$0,53</span></div></div></div><div class="cardfoot"><a href="https://www.instagram.com/p/DflSTumMoCO/" target="_blank" rel="noopener">▶ Post IG</a></div></div>
+  </div>
+
+  <div class="subhead"><h3>Promissores</h3><span class="cap">Sinal positivo inicial — resultado promissor, ainda com poucas compras para confirmar consistência</span></div>
+  <div class="grid">
+    <div class="card"><div class="top"><h3><span>Blusa Karla — foto no corpo</span></h3><span class="chip c-new">Sinal inicial</span></div><div class="why">Investimento pequeno e poucas compras atribuídas: ROAS alto, ainda sem amostra para confirmar.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$6</span></div></div><div><div class="m">Compras</div><div class="x"><span>3</span></div></div><div><div class="m">ROAS</div><div class="x"><span>48,1</span>*</div></div></div><div class="cardfoot"><a href="https://www.instagram.com/p/DfQ6MH7MXPC/" target="_blank" rel="noopener">▶ Post IG</a><span class="lowconf">*amostra baixa</span></div></div>
+    <div class="card"><div class="top"><h3><span>Cropped Tule Mavie</span></h3><span class="chip c-new">Sinal inicial</span></div><div class="why">Investimento pequeno e uma compra atribuída: ROAS alto, ainda sem amostra para confirmar.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$4</span></div></div><div><div class="m">Compras</div><div class="x"><span>1</span></div></div><div><div class="m">ROAS</div><div class="x"><span>20,7</span>*</div></div></div><div class="cardfoot"><a href="https://www.instagram.com/p/Dd4LHi5MUDB/" target="_blank" rel="noopener">▶ Post IG</a><span class="lowconf">*amostra baixa</span></div></div>
+    <div class="card"><div class="top"><h3><span>Body Celia Preto</span></h3><span class="chip c-new">Sinal inicial</span></div><div class="why">Investimento pequeno e poucas compras atribuídas: ROAS alto, ainda sem amostra para confirmar.</div><div class="metrics"><div><div class="m">Invest.</div><div class="x"><span>R$24</span></div></div><div><div class="m">Compras</div><div class="x"><span>4</span></div></div><div><div class="m">ROAS</div><div class="x"><span>19,7</span>*</div></div></div><div class="cardfoot"><a href="https://www.instagram.com/p/DbmmD9os0Ym/" target="_blank" rel="noopener">▶ Post IG</a><span class="lowconf">*amostra baixa</span></div></div>
+  </div>
+  <div class="flag">🔎 <b>Prévias.</b> "Post IG" abre o post real usado como criativo; "Prévia do anúncio" abre o preview do Meta. O conteúdo do vídeo costuma exigir login do Instagram/Meta.</div>
+</section>
+
+<section>
+  <div class="eyebrow">Duas semanas</div>
+  <h2>Criativos que se destacam por mais tempo</h2>
+  <p class="lede">Comparamos <span>02/11</span>–<span>08/11</span> com <span>09/11</span>–<span>15/11</span>, sempre pelo <b>ID real</b> do anúncio. A regra de ouro é separar <b>eficiência</b> (ROAS/CPA, proporcionais) de <b>investimento</b>: menos compras com menos verba não é perda de força. Amostras pequenas aparecem sinalizadas.</p>
+
+  <div class="subhead"><h3>Consistentes</h3><span class="cap">bons resultados nas duas semanas — referências prioritárias</span></div>
+  <div class="grid">
+    <div class="card"><div class="top"><h3><span>Catálogo — público novo</span></h3><span class="chip c-active">Consistente</span></div><div class="why">Presente nas duas semanas, com mais compras atribuídas e ROAS maior nesta.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>52</span> → <span>75</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>10,2</span> → <span>15,3</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>R$12</span> → <span>R$8</span></div></div></div></div>
+    <div class="card"><div class="top"><h3><span>Body Carlotta — foto em ambiente</span></h3><span class="chip c-active">Consistente</span></div><div class="why">Presente nas duas semanas, com mais compras atribuídas e ROAS maior nesta.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>10</span> → <span>16</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>5,6</span> → <span>7,7</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>R$22</span> → <span>R$16</span></div></div></div></div>
+    <div class="card"><div class="top"><h3><span>Body Coline — foto em ambiente</span></h3><span class="chip c-active">Consistente</span></div><div class="why">Presente nas duas semanas, com mais compras atribuídas e ROAS maior nesta.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>10</span> → <span>13</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>9,1</span> → <span>12,0</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>R$14</span> → <span>R$11</span></div></div></div></div>
+    <div class="card"><div class="top"><h3><span>Blusa Malibu — foto no corpo</span></h3><span class="chip c-active">Consistente</span></div><div class="why">Presente nas duas semanas: menos compras atribuídas e ROAS maior nesta; os dados não indicam a causa.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>20</span> → <span>10</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>9,5</span> → <span>12,1</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>R$15</span> → <span>R$11</span></div></div></div></div>
+    <div class="card"><div class="top"><h3><span>Blusa Anara — vídeo no corpo</span></h3><span class="chip c-active">Consistente</span></div><div class="why">Presente nas duas semanas: <b>maior ROAS da semana entre os anúncios com amostra suficiente</b>, com menos compras atribuídas que na anterior.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>7</span> → <span>5</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>10,8</span> → <span>25,9</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>R$14</span> → <span>R$7</span></div></div></div></div>
+  </div>
+
+  <div class="subhead"><h3>Novos destaques da semana</h3><span class="cap">passaram a performar agora — recuperação, mais entrega ou estreia</span></div>
+  <div class="grid">
+    <div class="card"><div class="top"><h3><span>Cropped Haila — vídeo no corpo</span></h3><span class="chip c-new">Novo destaque</span></div><div class="why">Sem entrega na semana anterior; entrou direto no topo.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>0</span> → <span>16</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>—</span> → <span>17,6</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>—</span> → <span>R$7</span></div></div></div></div>
+    <div class="card"><div class="top"><h3><span>Cropped Belora — vídeo no corpo</span></h3><span class="chip c-new">Novo destaque</span></div><div class="why">Sem entrega na semana anterior; entrou direto no topo.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>0</span> → <span>18</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>—</span> → <span>12,8</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>—</span> → <span>R$9</span></div></div></div></div>
+    <div class="card"><div class="top"><h3><span>Macacão Florise — vídeo vestindo</span></h3><span class="chip c-new">Novo destaque</span></div><div class="why">Sem entrega na semana anterior; entrou no topo nesta, com a campanha registrada como pausada.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>0</span> → <span>11</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>—</span> → <span>6,0</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>—</span> → <span>R$23</span></div></div></div></div>
+    <div class="card"><div class="top"><h3><span>Body Rendado Lily — foto</span></h3><span class="chip c-new">Novo destaque</span></div><div class="why">Investimento quase nulo na semana anterior; nesta, mais compras atribuídas e ROAS alto.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>1</span> → <span>7</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>3,3</span> → <span>23,6</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>R$24</span> → <span>R$4</span></div></div></div></div>
+    <div class="card"><div class="top"><h3><span>Body Celia Preto</span></h3><span class="chip c-new">Novo destaque</span></div><div class="why">Investimento quase nulo na semana anterior; nesta, mais compras atribuídas, ainda com amostra baixa.</div><div class="metrics"><div><div class="m">Compras S1→S2</div><div class="x"><span>2</span> → <span>4</span></div></div><div><div class="m">ROAS S1→S2</div><div class="x pos"><span>13,3</span> → <span>19,7</span></div></div><div><div class="m">CPA S1→S2</div><div class="x"><span>R$10</span> → <span>R$6</span></div></div></div></div>
+  </div>
+
+  <div class="subhead"><h3>Em observação e saídas do topo</h3><span class="cap">mudanças de entrega ou de eficiência — mencionadas para explicar o ranking</span></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Criativo</th><th>Produto</th><th>S1 compras</th><th>S1 ROAS</th><th>S2 compras</th><th>S2 ROAS</th><th>Leitura</th></tr></thead>
+    <tbody>
+      <tr><td><span>Catálogo — público novo</span></td><td style="text-align:left;white-space:normal"><span>Catálogo do site (peça não identificada)</span></td><td><span>52</span></td><td><span>10,2</span></td><td><span>75</span></td><td><span>15,3</span></td><td style="text-align:left;white-space:normal"><span>Consistente</span></td></tr>
+      <tr><td><span>Cropped Haila — vídeo no corpo</span></td><td style="text-align:left;white-space:normal"><span>Cropped Haila</span></td><td><span>0</span></td><td><span>—</span></td><td><span>16</span></td><td><span>17,6</span></td><td style="text-align:left;white-space:normal"><span>Novo destaque</span></td></tr>
+      <tr><td><span>Cropped Belora — vídeo no corpo</span></td><td style="text-align:left;white-space:normal"><span>Cropped Belora</span></td><td><span>0</span></td><td><span>—</span></td><td><span>18</span></td><td><span>12,8</span></td><td style="text-align:left;white-space:normal"><span>Novo destaque</span></td></tr>
+      <tr><td><span>Body Carlotta — foto em ambiente</span></td><td style="text-align:left;white-space:normal"><span>Body Carlotta</span></td><td><span>10</span></td><td><span>5,6</span></td><td><span>16</span></td><td><span>7,7</span></td><td style="text-align:left;white-space:normal"><span>Consistente</span></td></tr>
+      <tr><td><span>Body Coline — foto em ambiente</span></td><td style="text-align:left;white-space:normal"><span>Body Coline</span></td><td><span>10</span></td><td><span>9,1</span></td><td><span>13</span></td><td><span>12,0</span></td><td style="text-align:left;white-space:normal"><span>Consistente</span></td></tr>
+      <tr><td><span>Macacão Florise — vídeo vestindo</span></td><td style="text-align:left;white-space:normal"><span>Macacão Florise</span></td><td><span>0</span></td><td><span>—</span></td><td><span>11</span></td><td><span>6,0</span></td><td style="text-align:left;white-space:normal"><span>Novo destaque</span></td></tr>
+      <tr><td><span>Blusa Malibu — foto no corpo</span></td><td style="text-align:left;white-space:normal"><span>Blusa Malibu</span></td><td><span>20</span></td><td><span>9,5</span></td><td><span>10</span></td><td><span>12,1</span></td><td style="text-align:left;white-space:normal"><span>Consistente</span> — menos compras atribuídas, ROAS maior</td></tr>
+      <tr><td><span>Blusa Anara — vídeo no corpo</span></td><td style="text-align:left;white-space:normal"><span>Blusa Anara</span></td><td><span>7</span></td><td><span>10,8</span></td><td><span>5</span></td><td><span>25,9</span></td><td style="text-align:left;white-space:normal"><span>Consistente</span> — menos compras atribuídas, ROAS maior</td></tr>
+      <tr><td><span>Body Rendado Lily — foto</span></td><td style="text-align:left;white-space:normal"><span>Body Rendado Lily</span></td><td><span>1</span></td><td><span>3,3</span></td><td><span>7</span></td><td><span>23,6</span></td><td style="text-align:left;white-space:normal"><span>Novo destaque</span></td></tr>
+      <tr><td><span>Body Celia Preto</span></td><td style="text-align:left;white-space:normal"><span>Body Celia Preto</span></td><td><span>2</span></td><td><span>13,3</span></td><td><span>4</span></td><td><span>19,7</span></td><td style="text-align:left;white-space:normal"><span>Novo destaque</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="why" style="margin-top:12px"><span>Comparação pelo ID real de cada anúncio. <b>Consistente</b> quer dizer presente nas duas semanas sem perder eficiência proporcional; <b>Novo destaque</b>, sem entrega ou com investimento quase nulo na semana anterior. Os dados não indicam a causa das mudanças.</span></p>
+</section>
+
+<section class="alt">
+  <div class="eyebrow">Vitrine</div>
+  <h2>Produtos que mais venderam</h2>
+  <p class="lede">Métricas de item do GA4 na janela (visualizações, carrinhos, unidades, receita). Não usamos "sessões por produto": o agrupamento repete contagens entre variantes — lacuna declarada.</p>
+  <div style="margin-top:16px">
+  <div class="tablewrap"><table>
+    <thead><tr><th>Produto</th><th>Receita</th><th>Unid.</th><th>Views</th><th>ATC</th><th>Compras por visualização</th></tr></thead>
+    <tbody>
+      <tr><td><span>Blusa Crepe Macio Aveline - Decote V Detalhes Dourados e Peplum</span></td><td><span>R$1.875</span></td><td><span>47</span></td><td><span>1.556</span></td><td><span>220</span></td><td><span>3,0%</span></td></tr>
+      <tr><td><span>Blusa Crepe Macio Amália - Um Ombro Só em com Amarração e Peplum</span></td><td><span>R$1.636</span></td><td><span>41</span></td><td><span>1.020</span></td><td><span>151</span></td><td><span>4,0%</span></td></tr>
+      <tr><td><span>Cropped Plissado Thaísa - Regatinha com Alça Elástica</span></td><td><span>R$1.237</span></td><td><span>31</span></td><td><span>805</span></td><td><span>111</span></td><td><span>3,9%</span></td></tr>
+      <tr><td><span>Blusa Crepe Macio Eluna Halter Costa Nua Tecido Duplo</span></td><td><span>R$998</span></td><td><span>25</span></td><td><span>827</span></td><td><span>123</span></td><td><span>3,0%</span></td></tr>
+      <tr><td><span>Cropped Corset Delara - Neo Crepe Tomara que Caia</span></td><td><span>R$998</span></td><td><span>25</span></td><td><span>817</span></td><td><span>118</span></td><td><span>3,1%</span></td></tr>
+      <tr><td><span>Macacão Florise Jeans 100% Algodão Tomara que Caia</span></td><td><span>R$900</span></td><td><span>5</span></td><td><span>727</span></td><td><span>14</span></td><td><span>0,7%</span></td></tr>
+      <tr><td><span>Blusa Rendada Zafira - Regata Babados e Barra Assimétrica</span></td><td><span>R$798</span></td><td><span>16</span></td><td><span>988</span></td><td><span>124</span></td><td><span>1,6%</span></td></tr>
+      <tr><td><span>Blusa Alongada Taize - Neo Crepe com Amarração nas Costas e Peplum</span></td><td><span>R$758</span></td><td><span>19</span></td><td><span>652</span></td><td><span>89</span></td><td><span>2,9%</span></td></tr>
+      <tr><td><span>Vale Presente - Virtual</span></td><td><span>R$750</span></td><td><span>3</span></td><td><span>5</span></td><td><span>6</span></td><td><span>60,0%</span></td></tr>
+      <tr><td><span>Blusa Neo Crepe Apolline - Regata Corset com Peplum</span></td><td><span>R$718</span></td><td><span>18</span></td><td><span>488</span></td><td><span>58</span></td><td><span>3,7%</span></td></tr>
+    </tbody>
+  </table></div>
+  </div>
+  <div class="subhead"><h3>Oportunidades nos produtos</h3><span class="cap">muito interesse × pouca exposição</span></div>
+  <div class="cols">
+    <div style="min-width:0">
+  <div class="tablewrap"><table>
+    <thead><tr><th>Muito interesse, pouca compra</th><th>Views</th><th>Compras por visualização</th><th>Unid.</th></tr></thead>
+    <tbody>
+      <tr><td><span>Macacão Florise Jeans 100% Algodão Tomara que Caia</span></td><td><span>727</span></td><td><span>0,7%</span></td><td><span>5</span></td></tr>
+    </tbody>
+  </table></div>
+      <p class="why"><span>Das <span>69</span> peças com <span>137</span> visualizações ou mais, só o <span>Macacão Florise Jeans 100% Algodão Tomara que Caia</span> converteu abaixo da loja (<span>2,19%</span>) além do que o acaso explica: <span>727</span> visualizações e <span>5</span> unidades registradas no Google Analytics. O vídeo da peça teve <span>11</span> compras atribuídas pela Meta no mesmo período; as duas populações não se somam e os dados não indicam a causa da diferença.</span></p>
+    </div>
+    <div style="min-width:0">
+  <div class="tablewrap"><table>
+    <thead><tr><th>Pouca exposição, boa resposta</th><th>Views</th><th>Compras por visualização</th><th>Unid.</th></tr></thead>
+    <tbody>
+      <tr><td><span>Vale Presente - Virtual</span></td><td><span>5</span></td><td><span>60,0%</span></td><td><span>3</span></td></tr>
+    </tbody>
+  </table></div>
+      <p class="why"><span>Uma única linha ficou acima da loja (<span>2,19%</span>) com menos de <span>137</span> visualizações, e ela não é peça de vestuário: o <span>Vale Presente - Virtual</span>, com <span>5</span> visualizações e <span>3</span> unidades. Com essa exposição, é hipótese a testar, não leitura fechada.</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">A conexão</div>
+  <h2>Cruzamento entre criativos e produtos</h2>
+  <div class="q" style="margin-top:16px">
+    <div class="item"><p class="ask">Anunciamos o que mais vende?</p><p><span>Em parte. Os criativos destacados mostram Cropped Haila, Cropped Belora, Body Carlotta, Body Coline e Macacão Florise, mas as peças com mais unidades registradas no Google Analytics — <span>Blusa Crepe Macio Aveline - Decote V Detalhes Dourados e Peplum</span>, com <span>47</span> unidades, <span>Blusa Crepe Macio Amália - Um Ombro Só em com Amarração e Peplum</span> e <span>Cropped Plissado Thaísa - Regatinha com Alça Elástica</span> — não aparecem entre os criativos destacados.</span></p></div>
+    <div class="item"><p class="ask">O que vende no site e recebe pouca mídia?</p><p><span>A <span>Blusa Crepe Macio Amália - Um Ombro Só em com Amarração e Peplum</span> e o <span>Cropped Plissado Thaísa - Regatinha com Alça Elástica</span> converteram acima da loja (<span>2,19%</span>) além do acaso: <span>4,0%</span> e <span>3,9%</span> de compras por visualização, com <span>1.020</span> e <span>805</span> visualizações. Nenhuma das duas aparece entre os criativos destacados.</span></p></div>
+    <div class="item"><p class="ask">Que formato dá para transferir?</p><p><span>Vídeo da peça no corpo: os dois criativos que entraram direto no topo são vídeos de cropped no corpo, e o vídeo da Blusa Anara teve o maior ROAS da semana entre os anúncios com amostra suficiente. Foto da peça em ambiente segue respondendo nas duas semanas, com Body Carlotta e Body Coline.</span></p></div>
+    <div class="item"><p class="ask">Onde ampliar o repertório?</p><p><span>As peças com mais unidades registradas no Google Analytics se repetem em um recorte: blusas com peplum ou amarração — <span>Blusa Crepe Macio Aveline - Decote V Detalhes Dourados e Peplum</span>, <span>Blusa Crepe Macio Amália - Um Ombro Só em com Amarração e Peplum</span>, <span>Blusa Alongada Taize - Neo Crepe com Amarração nas Costas e Peplum</span> e <span>Blusa Neo Crepe Apolline - Regata Corset com Peplum</span>. Vale dar criativo próprio a esse recorte, no formato que já respondeu.</span></p></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="eyebrow">O que priorizar</div>
+  <h2>Direcionamento de novos criativos</h2>
+  <p class="lede">O que vale a pena gravar e por quê, com base nos dados desta semana. Como produzir e apresentar cada peça é decisão do time da <span>Brechic Boutique</span>. <span>Priorizamos referências que se mantiveram por duas semanas.</span></p>
+  <div class="brief" style="margin-top:18px">
+    <div class="b"><div class="p">Prioridade alta</div><h3><span>Blusa Crepe Macio Aveline - Decote V Detalhes Dourados e Peplum</span></h3><p class="why"><b>Por quê:</b> lidera as unidades registradas no Google Analytics (<span>47</span> unidades em <span>1.556</span> visualizações) e não aparece entre os criativos destacados.</p><p class="why"><b>Oportunidade:</b> dar à peça um criativo próprio no formato de vídeo no corpo, que entrou direto no topo nesta semana.</p><p class="why"><b>Referência:</b> o vídeo do Cropped Haila no corpo, novo destaque desta semana.</p></div>
+    <div class="b"><div class="p">Conversão acima da loja no Google Analytics</div><h3><span>Blusa Crepe Macio Amália - Um Ombro Só em com Amarração e Peplum</span></h3><p class="why"><b>Por quê:</b> <span>41</span> unidades em <span>1.020</span> visualizações (<span>4,0%</span> de compras por visualização, contra <span>2,19%</span> da loja), sem criativo entre os destacados.</p><p class="why"><b>Oportunidade:</b> a peça converte acima da média com menos vitrine que as do topo; mais conteúdo testa se a resposta se mantém com mais visualizações.</p><p class="why"><b>Referência:</b> a foto em ambiente do Body Coline, consistente nas duas semanas.</p></div>
+    <div class="b"><div class="p">Ampliar o que respondeu bem</div><h3>Cropped Belora</h3><p class="why"><b>Por quê:</b> vídeo no corpo sem entrega na semana anterior, agora com <span>18</span> compras atribuídas e ROAS <span>12,8</span>.</p><p class="why"><b>Oportunidade:</b> variações da peça no mesmo formato podem confirmar a resposta.</p><p class="why"><b>Referência:</b> o próprio vídeo do Cropped Belora.</p></div>
+  </div>
+</section>
+
+<div style="padding-block:40px 24px;border-top:1px solid var(--line);text-align:center">
+  <div class="eyebrow" style="color:var(--sage)"><span>Brechic Boutique</span> · Criativos &amp; Produtos</div>
+  <p class="muted" style="font-size:.84rem;margin-top:6px">Edição semanal · <span>09/11</span>–<span>15/11/2026</span></p>
+</div>
+
+</div>
+
+</body>
+</html>
